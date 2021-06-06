@@ -20,8 +20,8 @@ A simple note taking application powered by Express.js. Express_NoteTaker was cr
   or   
   Access the Heroku application below. 
 
-  You can clone the repo [here] (https://github.com/thuylienvo/Express_NoteTaker).
-  Access the deployed application [here] (https://notetakermv.herokuapp.com/notes).
+  You can clone the repo [here](https://github.com/thuylienvo/Express_NoteTaker).
+  Access the deployed application [here](https://notetakermv.herokuapp.com/notes).
 
 
   ## Technology
