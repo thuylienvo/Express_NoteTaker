@@ -25,6 +25,8 @@ function noteId (id, notesArray) {
         }
     }
 }
+
+
 //DELETE A NOTE
 function deleteNote(id, notesArray){
     const noteIndex = noteId(id, notesArray);
