@@ -1,7 +1,9 @@
 const router = require('express').Router();
+const { json } = require('express');
 const fs = require('fs');
 const path = require('path');
 let { notes } = require('../../db/db.json');
+
 
 
 // CREATE A NOTE 
@@ -15,6 +17,7 @@ function createNote (body, notesArray){
     return note;
 };
 
+//ADD ID TO GRAB AND DELETE
 function noteId (id, notesArray) {
     for(let i = 0; i < notesArray.length; i++){
         if(notesArray[i].id === id){
@@ -22,7 +25,7 @@ function noteId (id, notesArray) {
         }
     }
 }
-
+//DELETE A NOTE
 function deleteNote(id, notesArray){
     const noteIndex = noteId(id, notesArray);
     notesArray.splice(noteIndex, 1);
@@ -40,13 +43,18 @@ router.get('/notes', (req, res) => {
 });
 
 router.post('/notes', (req, res) => {
-    console.log(req.body.id);
-    const newNote = createNote(req.body, notes);
-    res.json(newNote)
-});
+    let note = createNote(req.body, notes);
+    console.log(note)
+    res.json(note)
+    req.params.id;
+    fs.writeFileSync('../../db/db.json', 
+    JSON.stringify({notes}, null, 2), function (err) {
+        if (err) 
+        throw err;
+    });
+});  
 
-router.delete('/notes:id', (req, res) => {
-
+router.delete('/notes/:id', (req, res) => {
     const idNumber = req.params.id;
     res.json(deleteNote(idNumber, notes))
 });
