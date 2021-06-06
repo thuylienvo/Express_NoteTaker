@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const fs = require('fs');
 const path = require('path');
-let { notes } = require('./db/db.json');
+const { notes } = require('./db/db.json');
 
 // PKG TO PULL IN UUID
-// const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 
 //get access to db.json file
