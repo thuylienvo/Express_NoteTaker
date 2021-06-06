@@ -3,27 +3,33 @@ const fs = require('fs');
 const path = require('path');
 const { notes } = require('./db/db.json');
 
-// PKG TO PULL IN UUID
-const { v4: uuidv4 } = require('uuid');
+// // PKG TO PULL IN UUID
+// const { v4: uuidv4 } = require('uuid');
 
 
-//get access to db.json file
+
+
+// CREATE A NOTE 
+function createNote (body, notesArr){
+    const note = body;
+    notesArr.push(note);
+    fs.writeFileSync(
+        path.join(__dirname, './db/db/json'),
+        JSON.stringify({notes}), null, 2
+    );
+    return note;
+};
+
+
+// GET ACCESS TO DB.JSON FILE 
 router.get('/notes', (req, res) => {
     res.json(notes);
 });
 
-//post new notes
-// router.post('/notes', function(req, res) {
-//     req.body.id = uuidv4();
-
-    //use function to take in data to send
-//     const newNote = addNewNote(req.body, notes);
-//     res.json(newNote);
-// });
-
-
-// DELETE REQUEST 
-
+router.post('/notes', (req, res) => {
+    const note = createNote(req.body, notes);
+    res.json(note)
+});
 
 
 
