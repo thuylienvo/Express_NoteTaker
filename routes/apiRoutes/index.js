@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const fs = require('fs');
 const path = require('path');
-const { notes } = require('./db/db.json');
+const { notes } = require('../../db/db.json');
 
 // // PKG TO PULL IN UUID
 // const { v4: uuidv4 } = require('uuid');
@@ -14,8 +14,8 @@ function createNote (body, notesArr){
     const note = body;
     notesArr.push(note);
     fs.writeFileSync(
-        path.join(__dirname, './db/db/json'),
-        JSON.stringify({notes}), null, 2
+        path.join(__dirname, '../../db/db.json'),
+        JSON.stringify({notes}, null, 2)
     );
     return note;
 };
