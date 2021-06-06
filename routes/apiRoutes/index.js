@@ -46,12 +46,6 @@ router.post('/notes', (req, res) => {
     let note = createNote(req.body, notes);
     console.log(note)
     res.json(note)
-    req.params.id;
-    fs.writeFileSync('../../db/db.json', 
-    JSON.stringify({notes}, null, 2), function (err) {
-        if (err) 
-        throw err;
-    });
 });  
 
 router.delete('/notes/:id', (req, res) => {
