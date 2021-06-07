@@ -1,12 +1,10 @@
-# Express_NoteTaker
+# Express_NoteTaker [![License](https://img.shields.io/badge/License-MIT-yellow.svg)] 
 
 ## Description
 A simple note taking application powered by Express.js. Express_NoteTaker was created to help organize thoughts and keep track of tasks. User can easily add and delete daily tasks at the click of a button. 
 
 
-  ![notetaker-gif]()
-
-
+ ![Express_NoteTaker](https://user-images.githubusercontent.com/79684575/120945082-592bcb80-c6fd-11eb-8a9a-dd8bb8145c06.gif)
 
   ## Table of Contents
 
@@ -18,10 +16,10 @@ A simple note taking application powered by Express.js. Express_NoteTaker was cr
   ## Installation
   To generate the applicaion, first run `npm start` and then access the localhost: 3000   
   or   
-  Access the Heroku application below. 
+  Access the deployed application [here](https://notetakermv.herokuapp.com/notes).   
 
-  You can clone the repo [here](https://github.com/thuylienvo/Express_NoteTaker).
-  Access the deployed application [here](https://notetakermv.herokuapp.com/notes).
+  You can clone the repo [here](https://github.com/thuylienvo/Express_NoteTaker).   
+
 
 
   ## Technology
