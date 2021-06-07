@@ -4,11 +4,13 @@ const fs = require('fs');
 const path = require('path');
 let { notes } = require('../../db/db.json');
 
-
+// PKG TO PULL IN UUID
+const { uuid } = require('uuidv4');
 
 // CREATE A NOTE 
 function createNote (body, notesArray){
     const note = body;
+    note.id = uuid();
     notesArray.push(note);
     fs.writeFileSync(
         path.join(__dirname, '../../db/db.json'),
